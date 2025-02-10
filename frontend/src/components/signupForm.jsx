@@ -1,4 +1,5 @@
 import logo from "../assets/logo.png";
+import Input from "./input";
 
 const SignupForm = () => {
   return (
@@ -16,30 +17,15 @@ const SignupForm = () => {
       <div className="bg-gray-200 w-9/12 shadow-3xl rounded-xl h-fit md:w-1/2 lg:w-full border-2 lg:border-0 border-slate-800">
         <div className="p-4">
           <div className="relative justify-end flex items-center text-lg mb-4">
-            <input
-              type="text"
-              id="nome"
-              className="bg-slate-400 rounded p-2 w-full text-slate-800 placeholder:text-slate-800 lg:p-4 border-2 border-slate-800"
-              placeholder="Digite seu nome"
-            />
+            <Input type="text" id="nome" placeholder="Digite seu nome" />
             <i className="material-icons absolute mr-2">person</i>
           </div>
           <div className="relative justify-end flex items-center text-lg mb-4">
-            <input
-              type="text"
-              id="email"
-              className="bg-slate-400 rounded p-2 w-full text-slate-800 placeholder:text-slate-800 lg:p-4 border-2 border-slate-800"
-              placeholder="Digite seu e-mail"
-            />
+            <Input type="text" id="email" placeholder="Digite seu e-mail" />
             <i className="material-icons absolute mr-2">mail</i>
           </div>
           <div className="relative justify-end flex items-center text-lg mb-4">
-            <input
-              type="password"
-              id="senha"
-              className="bg-slate-400 rounded p-2 w-full text-slate-800 placeholder:text-slate-800 lg:p-4 border-2 border-slate-800"
-              placeholder="Digite sua senha"
-            />
+            <Input type="password" id="senha" placeholder="Digite sua senha" />
             <i
               id="visibility-icon"
               className="material-icons absolute mr-2 cursor-pointer"
@@ -49,10 +35,9 @@ const SignupForm = () => {
             </i>
           </div>
           <div className="relative justify-end flex items-center text-lg mb-4">
-            <input
+            <Input
               type="password"
               id="senha-confirmacao"
-              className="bg-slate-400 rounded p-2 w-full text-slate-800 placeholder:text-slate-800 lg:p-4 border-2 border-slate-800"
               placeholder="Confirme sua senha"
             />
             <i
@@ -64,26 +49,16 @@ const SignupForm = () => {
             </i>
           </div>
           <div className="relative justify-end flex items-center text-lg mb-4">
-            <input
-              type="text"
-              id="cpf"
-              className="bg-slate-400 rounded p-2 w-full text-slate-800 placeholder:text-slate-800 lg:p-4 border-2 border-slate-800"
-              placeholder="Digite seu CPF"
-            />
+            <Input type="text" id="cpf" placeholder="Digite seu CPF" />
             <i className="material-icons absolute mr-2">badge</i>
           </div>
           <div className="relative justify-end flex items-center text-lg">
-            <input
-              type="text"
-              id="celular"
-              className="bg-slate-400 rounded p-2 w-full text-slate-800 placeholder:text-slate-800 lg:p-4 border-2 border-slate-800"
-              placeholder="Digite seu celular"
-            />
+            <Input type="text" id="celular" placeholder="Digite seu celular" />
             <i className="material-icons absolute mr-2">call</i>
           </div>
         </div>
         <div className="p-4 lg:flex lg:justify-center text-center">
-          <button className="font-medium uppercase rounded-full select-none text-xl p-2 w-2/3 bg-slate-800 text-white hover:bg-slate-700 active:bg-slate-800 md:p-4 lg:p-4 justify-center md:w-1/2 cursor-pointer">
+          <button className="font-medium rounded-full select-none text-xl p-2 w-2/3 bg-slate-800 text-white hover:bg-slate-700 active:bg-slate-800 md:p-4 lg:p-4 justify-center md:w-1/2 cursor-pointer">
             Cadastrar
           </button>
         </div>

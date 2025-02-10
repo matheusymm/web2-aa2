@@ -7,30 +7,27 @@ const Header = () => {
       >
         <i class="material-icons">menu</i>
       </div>
-      <div class="font-bold text-2xl cursor-pointer select-none lg:text-3xl">
-        Sportify
+      <div class="font-bold text-2xl cursor-pointer select-none hover:text-orange-800 lg:text-3xl">
+        <a href="/">Sportify</a>
       </div>
       <div
         id="menu"
         class="fixed top-14 left-0 w-full z-10 hidden flex-col p-2 gap-y-2 text-sm font-semibold bg-gray-200 lg:bg-transparent lg:border-b-0 border-b border-slate-800 lg:static lg:flex lg:flex-row lg:justify-end lg:border-t-0"
       >
         <div class="p-2 cursor-pointer select-none hover:text-orange-800 lg:text-xl mt-2">
-          Entre
+          <a href="login">Entre</a>
         </div>
         <div class="p-2 cursor-pointer select-none hover:text-orange-800 lg:text-xl mt-2">
-          Cadastre-se
+          <a href="signup">Cadastre-se</a>
         </div>
       </div>
       <div
         onclick="toggleDarkMode()"
         class="select-none cursor-pointer hover:text-yellow-500 mt-2"
       >
-        <div class="">
+        <div>
           <i class="material-icons">dark_mode</i>
         </div>
-        {/* <div class="hidden dark:block">
-          <i class="material-icons">light_mode</i>
-        </div> */}
       </div>
     </header>
   );

@@ -1,0 +1,28 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "name": "Giovanni",
+      "email": "giovannirossi@estudante.ufscar.br",
+      "password": "giovanni",
+      "cpf": "123.456.789-01",
+      "phone": "(16) 11111-1111"
+    },
+    {
+      "id": 2,
+      "name": "Matheus",
+      "email": "matheusymm@estudante.ufscar.br",
+      "password": "matheus",
+      "cpf": "123.456.789-02",
+      "phone": "(16) 22222-2222"
+    },
+    {
+      "id": 3,
+      "name": "Vitor",
+      "email": "vmilanez@estudante.ufscar.br",
+      "password": "vitor",
+      "cpf": "123.456.789-03",
+      "phone": "(16) 33333-3333"
+    }
+  ]
+}

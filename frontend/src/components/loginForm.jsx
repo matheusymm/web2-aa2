@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = (id, iconId) => {
     const input = document.getElementById(id);
@@ -27,7 +29,7 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch("http://localhost:3000/signin", {
+    const res = await fetch("http://localhost:3000/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,11 +37,21 @@ const LoginForm = () => {
       body: JSON.stringify({ email, password }),
     })
       .then((response) => {
-        response.json();
+        return response.json();
       })
-      .then((data) => {
-        console.log(data);
+      .catch((error) => {
+        console.error("Error:", error);
+        return 500;
       });
+    console.log(res);
+
+    if (res) {
+      localStorage.setItem("token", res.accessToken);
+      alert("Login efetuado com sucesso!");
+      navigate("/");
+    } else {
+      alert("E-mail ou senha incorretos!");
+    }
   };
 
   return (

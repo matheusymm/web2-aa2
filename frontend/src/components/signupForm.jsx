@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const SignupForm = () => {
@@ -8,6 +9,7 @@ const SignupForm = () => {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [cpf, setCpf] = useState("");
   const [phone, setPhone] = useState("");
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = (id, iconId) => {
     const input = document.getElementById(id);
@@ -47,6 +49,12 @@ const SignupForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (password !== passwordConfirmation) {
+      alert("As senhas são diferentes!");
+      return;
+    }
+
     const res = await fetch("http://localhost:3000/signup", {
       method: "POST",
       headers: {
@@ -56,16 +64,21 @@ const SignupForm = () => {
         name,
         email,
         password,
-        passwordConfirmation,
         cpf,
         phone,
       }),
-    }).then((response) => {
-      return response.status;
-    });
+    })
+      .then((response) => {
+        return response.status;
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        return 500;
+      });
 
     if (res === 201) {
       alert("Cadastro realizado com sucesso!");
+      navigate("/login");
     } else {
       alert("Erro ao cadastrar, tente novamente!");
     }

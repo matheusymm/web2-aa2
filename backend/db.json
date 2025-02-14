@@ -1,0 +1,15 @@
+{
+  "users": [],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Location 1",
+      "address": "Rua Location, 1",
+      "city": "São Carlos",
+      "country": "Brasil",
+      "phone": "(16) 99999-9999",
+      "email": "location@example.com",
+      "modality": ["Futebol", "Basquete"]
+    }
+  ]
+}

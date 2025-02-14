@@ -1,5 +1,4 @@
 import logo from "../assets/logo.png";
-import Input from "./input";
 
 const CourtsForm = () => {
   return (
@@ -17,12 +16,18 @@ const CourtsForm = () => {
       <div className="bg-gray-200 w-9/12 shadow-3xl rounded-xl h-fit md:w-1/2 lg:w-1/3 xl:w-1/4 xl:h-72 border-2 border-slate-800 ">
         <div className="p-4">
           <div className="flex items-center text-lg mb-4">
-            <Input type="text" id="cidade" placeholder="Digite sua cidade" />
+            <input
+              type="text"
+              id="cidade"
+              className="bg-slate-400 rounded p-2 w-full text-slate-800 placeholder:text-slate-800 lg:p-4 border-2 border-slate-800"
+              placeholder="Digite sua cidade"
+            />
           </div>
           <div className="flex items-center text-lg">
-            <Input
+            <input
               type="text"
               id="modalidade"
+              className="bg-slate-400 rounded p-2 w-full text-slate-800 placeholder:text-slate-800 lg:p-4 border-2 border-slate-800"
               placeholder="Digite a modalidade"
             />
           </div>

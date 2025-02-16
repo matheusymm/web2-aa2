@@ -27,7 +27,7 @@ const CourtsForm = () => {
             />
           </div>
           <div className="p-4 lg:flex lg:justify-center text-center">
-            <button className="font-medium rounded-full select-none text-xl p-2 w-2/3 bg-slate-800 text-white  hover:bg-slate-700 active:bg-slate-800 md:p-4 justify-center md:w-1/2 cursor-pointer">
+            <button onClick={'/results.jsx'} className="font-medium rounded-full select-none text-xl p-2 w-2/3 bg-slate-800 text-white  hover:bg-slate-700 active:bg-slate-800 md:p-4 justify-center md:w-1/2 cursor-pointer">
               Procurar
             </button>
           </div>

@@ -1,5 +1,14 @@
 {
   "users": [],
+  "reserve": [
+    {
+      "selectedDate": "2025-02-18",
+      "startTime": "16:00",
+      "endTime": "19:00",
+      "price": 60,
+      "id": 1
+    }
+  ],
   "locations": [
     {
       "id": 1,
@@ -9,7 +18,10 @@
       "country": "Brasil",
       "phone": "(16) 99999-9999",
       "email": "location@example.com",
-      "modality": ["Futebol", "Basquete"]
+      "modality": [
+        "Futebol",
+        "Basquete"
+      ]
     }
   ]
 }

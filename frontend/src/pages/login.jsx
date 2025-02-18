@@ -4,7 +4,7 @@ import Footer from "../components/footer";
 
 const Login = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-slate-300">
       <Header />
       <LoginForm />
       <Footer />

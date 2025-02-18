@@ -2,18 +2,11 @@
   "users": [],
   "reserve": [
     {
-      "selectedDate": "2025-02-12",
-      "startTime": "17:00",
-      "endTime": "20:00",
-      "price": 60,
+      "selectedDate": "2025-02-06",
+      "startTime": "11:00",
+      "endTime": "21:00",
+      "price": 200,
       "id": 1
-    },
-    {
-      "selectedDate": "2025-01-28",
-      "startTime": "19:00",
-      "endTime": "20:00",
-      "price": 20,
-      "id": 2
     }
   ],
   "locations": [

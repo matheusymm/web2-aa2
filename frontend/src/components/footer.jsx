@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="fixed bottom-0 w-full bg-slate-700 p-2 lg:p-4  flex items-center">
+    <footer className="fixed bottom-0 w-full bg-slate-700 p-2 lg:p-4  flex items-center ng-s">
       <div className="flex flex-row justify-between space-x-4 text-left text-sm text-gray-200 cursor-pointer">
         <a href="">Sobre Nós</a>
         <a href="">Termo de Uso</a>

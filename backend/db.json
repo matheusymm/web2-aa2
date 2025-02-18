@@ -19,7 +19,9 @@
       "phone": "(16) 99999-9999",
       "email": "location@example.com",
       "imagem": "images/quadra1.jpg",
-      "horario": "7:00 - 22:00",
+      "horarioInicio": "7:00",
+      "horarioFim": "22:00",
+      "price": "20",
       "modality": [
         "Futebol",
         "Basquete"
@@ -34,7 +36,9 @@
       "phone": "(16) 99999-9999",
       "email": "location2@example.com",
       "imagem": "images/quadra1.jpg",
-      "horario": "7:00 - 22:00",
+      "horarioInicio": "9:00",
+      "horarioFim": "23:00",
+      "price": "50",
       "modality": [
         "Futebol",
         "Basquete"

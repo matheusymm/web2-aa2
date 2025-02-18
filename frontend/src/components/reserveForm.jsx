@@ -20,7 +20,7 @@ const ReserveForm = () => {
       try {
         const response = await fetch(`http://localhost:3000/locations`);
         if (!response.ok) throw new Error("Erro ao buscar locations");
-
+        console.log(response);
         const data = await response.json();
         const locationFound = data.find(loc => loc.id === 2);
 
@@ -40,7 +40,9 @@ const ReserveForm = () => {
     if (selectedDate) {
       setIsStartTimeDisabled(false);
       const times = [];
-      for (let hora = 7; hora <= 22; hora++) {
+      const horaInicio = parseInt(locations.horarioInicio.split(":")[0]);
+      const horaFim = parseInt(locations.horarioFim.split(":")[0]);
+      for (let hora = horaInicio; hora <= horaFim; hora++) {
         times.push(`${hora}:00`);
       }
       setStartTimes(times);
@@ -71,7 +73,9 @@ const ReserveForm = () => {
     if (startTime && endTime) {
       const horaInicio = parseInt(startTime.split(":")[0]);
       const horaFim = parseInt(endTime.split(":")[0]);
-      setPrice(`R$${20 * (horaFim - horaInicio)},00`);
+      const priceLocation = parseInt(locations.price);
+      console.log(locations.price);
+      setPrice(`R$${priceLocation* (horaFim - horaInicio)},00`);
       setIsButtonDisabled(false);
     } else {
       setPrice("R$0,00");
@@ -129,7 +133,7 @@ const ReserveForm = () => {
                 <i className="material-icons mr-2 text-base lg:mt-2">location_on</i> {locations.address}, {locations.city}, {locations.country}
               </div>
               <div className="text-left flex items-center gap-1 text-slate-800">
-                <i className="material-icons mr-2 text-base lg:mt-2">schedule</i> {locations.horario}
+                <i className="material-icons mr-2 text-base lg:mt-2">schedule</i> {locations.horarioInicio} - {locations.horarioFim}
               </div>
               <div className="text-left flex items-center gap-1 lg:mt-2 text-slate-800 dark:text-gray-300">
                     <i className="material-icons mr-2 text-base">account_circle</i> Telefone: {locations.phone}<br/>

@@ -1,6 +1,21 @@
 {
   "users": [],
-  "reserve": [],
+  "reserve": [
+    {
+      "selectedDate": "2025-02-12",
+      "startTime": "17:00",
+      "endTime": "20:00",
+      "price": 60,
+      "id": 1
+    },
+    {
+      "selectedDate": "2025-01-28",
+      "startTime": "19:00",
+      "endTime": "20:00",
+      "price": 20,
+      "id": 2
+    }
+  ],
   "locations": [
     {
       "id": 1,
@@ -10,6 +25,21 @@
       "country": "Brasil",
       "phone": "(16) 99999-9999",
       "email": "location@example.com",
+      "imagem": "images/quadra1.jpg",
+      "horario": "7:00 - 22:00",
+      "modality": [
+        "Futebol",
+        "Basquete"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Location 2",
+      "address": "Rua Location, 2",
+      "city": "São Carlos 2",
+      "country": "Brasil 2",
+      "phone": "(16) 99999-9999",
+      "email": "location2@example.com",
       "imagem": "images/quadra1.jpg",
       "horario": "7:00 - 22:00",
       "modality": [

@@ -22,7 +22,7 @@ const ReserveForm = () => {
         if (!response.ok) throw new Error("Erro ao buscar locations");
 
         const data = await response.json();
-        const locationFound = data.find(loc => loc.id === parseInt(id));
+        const locationFound = data.find(loc => loc.id === 2);
 
         if (!locationFound) {
           throw new Error("Local não encontrado");
@@ -114,8 +114,8 @@ const ReserveForm = () => {
 
   return (
     <div className="w-full flex flex-col bg-white">
-      <div className="mx-auto w-full max-w-7xl p-5 rounded-lg bg-slate-300 flex flex-col h-screen">
-        <form onSubmit={handleSubmit}>
+      <div className="mx-auto w-full max-w-7xl p-5 rounded-lg bg-slate-300 flex flex-col h-1/2 lg:mt-30 lg:border-2 border-slate-800">
+      <form onSubmit={handleSubmit}>
           <div className="flex flex-col lg:flex-row h-1/2">
             <div className="w-full lg:w-1/2 mt-2 flex items-center justify-center">
               <img src={locations.imagem} className="w-full h-full rounded-lg object-cover border-2 border-slate-800" alt="Quadra" />
@@ -136,11 +136,11 @@ const ReserveForm = () => {
             <div className="w-full lg:w-1/2 items-center justify-center">
               <input 
                 type="date" 
-                className="w-full text-xl p-2 border-2 border-slate-800 rounded-lg text-center lg:text-2xl mt-4" 
+                className="w-full text-xl bg-slate-200 p-2 border-2 border-slate-800 rounded-lg text-center lg:text-2xl mt-4" 
                 value={selectedDate} 
                 onChange={(e) => setSelectedDate(e.target.value)} 
               />
-              <select className={`w-full text-xl rounded p-2 border-2 border-slate-800 mt-2 ${isStartTimeDisabled ? "cursor-not-allowed bg-slate-100 text-slate-500" : ""}`}
+              <select className={`w-full text-xl bg-slate-200 rounded p-2 border-2 border-slate-800 mt-2 disabled:border-gray-400 disabled:bg-gray-300 ${isStartTimeDisabled ? "cursor-not-allowed text-gray-600" : ""}`}
                 value={startTime} onChange={(e) => setStartTime(e.target.value)}
                 disabled={isStartTimeDisabled}>
                 <option value="">Selecione um horário</option>
@@ -148,7 +148,7 @@ const ReserveForm = () => {
                   <option key={time} value={time}>{time}</option>
                 ))}
               </select>
-              <select className={`w-full text-xl rounded p-2 border-2 border-slate-800 mt-2 ${isEndTimeDisabled ? "cursor-not-allowed bg-slate-100 text-slate-500" : ""}`}
+              <select className={`w-full text-xl bg-slate-200 rounded p-2 border-2 border-slate-800 mt-2 disabled:border-gray-400 disabled:bg-gray-300 ${isEndTimeDisabled ? "cursor-not-allowed text-gray-600" : ""}`}
                 value={endTime} onChange={(e) => setEndTime(e.target.value)} disabled={isEndTimeDisabled}>
                 <option value="">Selecione um horário</option>
                 {endTimes.map((time) => (
@@ -157,7 +157,7 @@ const ReserveForm = () => {
               </select>
             </div>
             <div className="w-full lg:w-1/2 flex flex-col lg:p-5 lg:mt-4">
-              <input type="text" className="text-xl p-2 border-2 border-slate-800 rounded-lg text-center lg:text-2xl" value={price} disabled />
+              <input type="text" className="text-xl bg-slate-200 p-2 border-2 border-slate-800 rounded-lg text-center lg:text-2xl" value={price} disabled />
               <button className="font-medium uppercase rounded-full text-xl p-2 w-full bg-slate-800 text-white hover:bg-slate-700 mt-6 disabled:bg-gray-400" disabled={isButtonDisabled}>
                 Reservar
               </button>

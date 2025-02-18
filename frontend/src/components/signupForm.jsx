@@ -98,7 +98,7 @@ const SignupForm = () => {
       </div>
       <form
         onSubmit={(e) => handleSubmit(e)}
-        className="bg-gray-200 w-9/12 shadow-3xl rounded-xl h-fit md:w-1/2 lg:w-full border-2 lg:border-0 border-slate-800"
+        className="bg-gray-200 w-10/12 shadow-3xl rounded-xl h-fit md:w-1/2 lg:w-full border-2 lg:border-0 border-slate-800"
       >
         <div className="p-4">
           <div className="relative justify-end flex items-center text-lg mb-4">

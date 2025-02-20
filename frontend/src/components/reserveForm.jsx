@@ -42,7 +42,7 @@ const ReserveForm = () => {
       const times = [];
       const horaInicio = parseInt(locations.horarioInicio.split(":")[0]);
       const horaFim = parseInt(locations.horarioFim.split(":")[0]);
-      for (let hora = horaInicio; hora <= horaFim; hora++) {
+      for (let hora = horaInicio; hora <= horaFim - 1; hora++) {
         times.push(`${hora}:00`);
       }
       setStartTimes(times);
@@ -58,8 +58,9 @@ const ReserveForm = () => {
     if (startTime) {
       setIsEndTimeDisabled(false);
       const horaInicio = parseInt(startTime.split(":")[0]);
+      const horaFim = parseInt(locations.horarioFim.split(":")[0]);
       const times = [];
-      for (let hora = horaInicio + 1; hora <= 22; hora++) {
+      for (let hora = horaInicio + 1; hora <= horaFim; hora++) {
         times.push(`${hora}:00`);
       }
       setEndTimes(times);

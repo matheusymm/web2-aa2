@@ -33,7 +33,7 @@ const Results = () => {
       setFilteredData(cardsData);
     } else {
       const filtered = cardsData.filter((card) =>
-        card.categories.includes(sport)
+        card.modality.includes(sport)
       );
       setFilteredData(filtered);
     }

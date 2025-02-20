@@ -40,8 +40,8 @@ const ReserveForm = () => {
     if (selectedDate) {
       setIsStartTimeDisabled(false);
       const times = [];
-      const horaInicio = parseInt(locations.horarioInicio.split(":")[0]);
-      const horaFim = parseInt(locations.horarioFim.split(":")[0]);
+      const horaInicio = parseInt(locations.schedule_start.split(":")[0]);
+      const horaFim = parseInt(locations.schedule_end.split(":")[0]);
       for (let hora = horaInicio; hora <= horaFim - 1; hora++) {
         times.push(`${hora}:00`);
       }
@@ -58,7 +58,7 @@ const ReserveForm = () => {
     if (startTime) {
       setIsEndTimeDisabled(false);
       const horaInicio = parseInt(startTime.split(":")[0]);
-      const horaFim = parseInt(locations.horarioFim.split(":")[0]);
+      const horaFim = parseInt(locations.schedule_end.split(":")[0]);
       const times = [];
       for (let hora = horaInicio + 1; hora <= horaFim; hora++) {
         times.push(`${hora}:00`);
@@ -94,6 +94,8 @@ const ReserveForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          locationId: locations.id,
+          locationName: locations.name,
           selectedDate,
           startTime,
           endTime,
@@ -118,13 +120,13 @@ const ReserveForm = () => {
   }
 
   return (
-    <div className="w-full flex flex-col bg-white">
-      <div className="mx-auto w-full max-w-7xl p-5 rounded-lg bg-slate-300 lg:bg-slate-300  dark:bg-slate-800 flex flex-col h-screen 
+    <div className="w-full flex flex-col">
+      <div className="mx-auto w-full max-w-7xl p-5 rounded-lg bg-gray-200 lg:bg-gray-200  dark:bg-slate-800 flex flex-col h-screen 
     md:w-3/4 md:h-3/4 md:rounded-2xl md:p-10 md:mt-20 lg:mt-12 lg:p-8 md:border-2 lg:border-2 border-slate-800 dark:border-gray-300 mb-2">
       <form onSubmit={handleSubmit}>
           <div className="flex flex-col lg:flex-row h-1/2">
             <div className="w-full lg:w-1/2 mt-2 md:mt-0 flex items-center justify-center">
-              <img src={locations.imagem} className="w-full h-full rounded-lg object-cover border-2 border-slate-800 dark:border-gray-300" alt="Quadra" />
+              <img src={locations.image} className="w-full h-full rounded-lg object-cover border-2 border-slate-800 dark:border-gray-300" alt="Quadra" />
             </div>
             <div className="w-full lg:w-1/2 flex flex-col justify-center lg:p-5 lg:text-2xl">
               <div className="text-left text-slate-800 dark:text-gray-300">
@@ -134,7 +136,7 @@ const ReserveForm = () => {
                 <i className="material-icons mr-2 text-base lg:mt-2">location_on</i> {locations.address}, {locations.city}, {locations.country}
               </div>
               <div className="text-left flex items-center gap-1 text-slate-800">
-                <i className="material-icons mr-2 text-base lg:mt-2">schedule</i> {locations.horarioInicio} - {locations.horarioFim}
+                <i className="material-icons mr-2 text-base lg:mt-2">schedule</i> {locations.schedule_start} - {locations.schedule_end}
               </div>
               <div className="text-left flex items-center gap-1 lg:mt-2 text-slate-800 dark:text-gray-300">
                     <i className="material-icons mr-2 text-base">account_circle</i> Telefone: {locations.phone}<br/>
@@ -150,14 +152,14 @@ const ReserveForm = () => {
               <input 
                 type="date" 
                 className="w-full text-xl p-2 outline-1 outline-slate-800 border-2
-                 border-slate-800 bg-white dark:bg-gray-700 text-slate-800 dark:text-gray-300 placeholder:text-slate-800
-                  dark:placeholder:text-gray-400 focus:bg-white dark:focus:bg-gray-600 focus:outline-none rounded-lg text-center
+                 border-slate-800 bg-slate-400 dark:bg-gray-700 text-slate-800 dark:text-gray-300 placeholder:text-slate-800
+                  dark:placeholder:text-gray-400 focus:bg-slate-400 dark:focus:bg-gray-600 focus:outline-none rounded-lg text-center
                    lg:text-2xl mt-4 lg:mb-1 lg:mt-2 dark:border-gray-300" 
                 value={selectedDate} 
                 onChange={(e) => setSelectedDate(e.target.value)} 
               />
               <div id="texto-horario-inicio" className="text-xl w-full text-slate-800 dark:text-gray-400 mt-4 md:mt-6 lg:mt-0 lg:text-2xl font-bold">Horário de início</div>
-              <select className={`w-full text-xl bg-white rounded p-2 border-2 border-slate-800 mt-2 disabled:border-gray-400 disabled:bg-gray-300 ${isStartTimeDisabled ? "cursor-not-allowed text-gray-600" : ""}`}
+              <select className={`w-full text-xl bg-slate-400 rounded p-2 border-2 border-slate-800 mt-2 disabled:border-gray-400 disabled:bg-gray-300 ${isStartTimeDisabled ? "cursor-not-allowed text-gray-600" : ""}`}
                 value={startTime} onChange={(e) => setStartTime(e.target.value)}
                 disabled={isStartTimeDisabled}>
                 <option value="">Selecione um horário</option>
@@ -167,7 +169,7 @@ const ReserveForm = () => {
               </select>
               <div id="texto-horario-termino" className="text-xl w-full text-slate-800 disabled:text-slate-500 dark:text-gray-400 lg:text-2xl mt-4 lg:mt-0 font-bold">Horário de Término
               </div>
-              <select className={`w-full text-xl bg-white rounded p-2 border-2 border-slate-800 mt-2 disabled:border-gray-400 disabled:bg-gray-300 ${isEndTimeDisabled ? "cursor-not-allowed text-gray-600" : ""}`}
+              <select className={`w-full text-xl bg-slate-400 rounded p-2 border-2 border-slate-800 mt-2 disabled:border-gray-400 disabled:bg-gray-300 ${isEndTimeDisabled ? "cursor-not-allowed text-gray-600" : ""}`}
                 value={endTime} onChange={(e) => setEndTime(e.target.value)} disabled={isEndTimeDisabled}>
                 <option value="">Selecione um horário</option>
                 {endTimes.map((time) => (
@@ -178,8 +180,8 @@ const ReserveForm = () => {
             <div className="w-full lg:w-1/2 flex flex-col lg:p-5 lg:mt-4 mt-6">
              <div class="flex flex-row justify-center space-x-4 items-center lg:block text-xl w-full text-slate-800 dark:text-gray-300 mr-2 text-center md:mt-6
                lg:text-2xl lg:text-center lg:mt-4 font-bold "><p>Preço:</p>
-              <input type="text" className="text-xl p-2 outline-1 outline-slate-800 border-2 border-slate-800 bg-white dark:bg-gray-700 text-slate-800
-                     dark:text-gray-300 placeholder:text-slate-800 dark:placeholder:text-gray-400 focus:bg-white dark:focus:bg-gray-600 focus:outline-none
+              <input type="text" className="text-xl p-2 outline-1 outline-slate-800 border-2 border-slate-800 bg-slate-400 dark:bg-gray-700 text-slate-800
+                     dark:text-gray-300 placeholder:text-slate-800 dark:placeholder:text-gray-400 focus:bg-slate-400 dark:focus:bg-gray-600 focus:outline-none
                       rounded-lg text-center lg:text-2xl lg:w-full lg:h-14 lg:mt-2 dark:border-gray-300" value={price} disabled />
               </div>
               <button className="font-medium uppercase rounded-full  select-none text-xl

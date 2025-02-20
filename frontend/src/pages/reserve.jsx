@@ -1,10 +1,9 @@
 import Header from "../components/header";
-import Footer from "../components/footer";
 import ReserveForm from "../components/reserveForm";
 
 const Reserve = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-slate-300">
       <Header />
       <ReserveForm />
     </div>

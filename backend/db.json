@@ -2,78 +2,66 @@
   "users": [],
   "reserve": [
     {
-      "selectedDate": "2025-02-06",
-      "startTime": "11:00",
-      "endTime": "21:00",
-      "price": 200,
-      "id": 1
-    },
-    {
-      "selectedDate": "2025-02-11",
-      "startTime": "22:00",
+      "locationId": 2,
+      "locationName": "Ginásio Poliesportivo UFSCAR",
+      "selectedDate": "2025-02-19",
+      "startTime": "18:00",
       "endTime": "23:00",
-      "price": 50,
-      "id": 2
+      "price": 250,
+      "id": 1
     }
   ],
   "locations": [
     {
       "id": 1,
       "name": "Centro Esportivo Municipal",
-      "address": "Rua Location, 1",
-      "city": "São Carlos",
+      "address": "Av. Central, 23",
+      "city": "Monte Alto",
       "country": "Brasil",
       "phone": "(16) 99999-9999",
-      "email": "location@example.com",
-      "imagem": "images/quadra1.jpg",
-      "schedule-start": "7:00",
-      "schedule-end": "22:00",
+      "email": "centroesportivo@example.com",
+      "image": "images/3040aeb4-a9d5-4e81-8ca1-3904b47c08f9.jpeg",
+      "schedule_start": "7:00",
+      "schedule_end": "22:00",
       "price": "20",
       "modality": [
-        "Futebol",
+        "Futsal",
         "Basquete"
       ]
     },
     {
       "id": 2,
       "name": "Ginásio Poliesportivo UFSCAR",
-      "address": "Rua Location, 2",
-      "city": "São Carlos 2",
-      "country": "Brasil 2",
+      "address": "R. do Lago",
+      "city": "São Carlos",
+      "country": "Brasil",
       "phone": "(16) 99999-9999",
-      "email": "location2@example.com",
+      "email": "ginasioufscar@ufscar.br",
       "image": "images/quadra1.jpg",
-      "horarioInicio": "9:00",
-      "horarioFim": "23:00",
+      "schedule_start": "9:00",
+      "schedule_end": "23:00",
       "price": "50",
       "modality": [
-        "Futebol",
-        "Basquete"
+        "Futsal",
+        "Basquete",
+        "Vôlei"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Arena TUSCA",
+      "address": "Av São Carlos, 221",
+      "city": "São Carlos",
+      "country": "Brasil",
+      "phone": "(16) 99999-9999",
+      "email": "arenaTusca@ufscar.br",
+      "image": "images/download.jpg",
+      "schedule_start": "7:00",
+      "schedule_end": "20:00",
+      "price": "50",
+      "modality": [
+        "Handebol"
       ]
     }
-  ],
-
-  "results": [
-      {
-        "image": "images/download.jpg",
-        "title": "Ginásio Poliesportivo UFSCAR",
-        "location": "R. do Lago - São Carlos, SP",
-        "schedule": "7:00 - 22:00",
-        "categories": ["Futsal", "Basquete", "Vôlei"]
-      },
-      {
-        "image": "/images/quadra2.jpeg",
-        "title": "Centro Esportivo Municipal",
-        "location": "Av. Central - São Carlos, SP",
-        "schedule": "8:00 - 20:00",
-        "categories": ["Futsal", "Basquete"]
-      },
-      {
-        "image": "/images/quadra2.jpeg",
-        "title": "Quadra de Areia",
-        "location": "Av São Carlos - São Carlos, SP",
-        "schedule": "8:00 - 20:00",
-        "categories": [ "Volei"]
-      }
-    ]
+  ]
 }

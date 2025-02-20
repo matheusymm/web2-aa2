@@ -13,7 +13,7 @@ const Results = () => {
   const [selectedSport, setSelectedSport] = useState("");
 
   useEffect(() => {
-    fetch('http://localhost:3000/results') // Substitua pela URL real
+    fetch('http://localhost:3000/locations') // Substitua pela URL real
       .then(response => response.json())
       .then(data => {
         setCardsData(data);

@@ -4,7 +4,7 @@ import Footer from "../components/footer";
 
 const Signup = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-slate-300 flex flex-col">
       <Header />
       <SignupForm />
       <Footer />

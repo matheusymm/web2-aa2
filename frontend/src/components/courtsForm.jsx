@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const CourtsForm = () => {
-  const [city, setCity] = useState("");
-  const [modalidade, setModalidade] = useState("");
   const navigate = useNavigate();
+  const [city, setCity] = useState("");
+  const [modality, setModality] = useState("");
 
   const handleSubmit = () => {
-    navigate("/results");
+    navigate(`/results/${city}/${modalidade}`);
   };
 
   useEffect(() => {
@@ -65,14 +65,17 @@ const CourtsForm = () => {
             <input
               type="text"
               id="modalidade"
-              value={modalidade}
-              onChange={(e) => setModalidade(e.target.value)}
+              value={modality}
+              onChange={(e) => setModality(e.target.value)}
               className="bg-slate-400 rounded p-2 w-full text-slate-800 placeholder:text-slate-800 lg:p-4 border-2 border-slate-800"
               placeholder="Digite a modalidade"
             />
           </div>
           <div className="p-4 lg:flex lg:justify-center text-center">
-            <button className="font-medium rounded-full select-none text-xl p-2 w-2/3 mt-4 bg-slate-800 text-white hover:bg-slate-700 active:bg-slate-800 md:p-4 justify-center md:w-1/2 cursor-pointer" onClick={() => handleSubmit()}>
+            <button
+              className="font-medium rounded-full select-none text-xl p-2 w-2/3 mt-4 bg-slate-800 text-white hover:bg-slate-700 active:bg-slate-800 md:p-4 justify-center md:w-1/2 cursor-pointer"
+              onClick={() => handleSubmit()}
+            >
               Procurar
             </button>
           </div>

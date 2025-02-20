@@ -15,8 +15,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
-          <Route path="results" element={<Results />} />
-          <Route path="reserve" element={<Reserve />} />
+          <Route path="results/:city/:modality" element={<Results />} />
+          <Route path="reserve/:id" element={<Reserve />} />
         </Route>
       </Routes>
     </BrowserRouter>

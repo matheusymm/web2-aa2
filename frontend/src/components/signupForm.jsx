@@ -155,7 +155,10 @@ const SignupForm = () => {
               id="visibility-icon-confirm"
               className="material-icons absolute mr-2 cursor-pointer"
               onClick={() =>
-                togglePasswordVisibility("senha-confirmacao", "visibility-icon")
+                togglePasswordVisibility(
+                  "senha-confirmacao",
+                  "visibility-icon-confirm",
+                )
               }
             >
               visibility

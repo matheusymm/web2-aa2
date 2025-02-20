@@ -53,11 +53,6 @@ const Header = () => {
           </>
         )}
       </div>
-      <div className="select-none cursor-pointer hover:text-yellow-500 mt-2">
-        <div>
-          <i className="material-icons">dark_mode</i>
-        </div>
-      </div>
     </header>
   );
 };
